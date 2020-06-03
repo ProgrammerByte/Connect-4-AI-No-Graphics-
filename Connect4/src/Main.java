@@ -11,11 +11,11 @@ public class Main {
 				fitness += 3;
 			}
 		}
-		//max coord = 5, 6
+		//max coord = 5, 6 IT'S IMPORTANT TO NOTICE THAT THIS COORDINATE SYSTEM GOES IN THE DIRECTION (DOWN, RIGHT) RATHER THAN THE STANDARD (RIGHT, UP). THIS HAS BEEN DONE TO REFLECT HOW THE DATA HAS BEEN STORED AND USED THROUGHOUT THE PROGRAM
 		int[][] combinations = new int[][] {{1, 0, 0, 0, 2, 6},
 											{0, 1, 0, 0, 5, 3}, 
 											{1, 1, 0, 0, 2, 3}, 
-											{1, -1, 0, 4, 2, 6}}; //iDir, xDir, iMin, xMin, iMax, xMax
+											{1, -1, 0, 3, 2, 6}}; //iDir, xDir, iMin, xMin, iMax, xMax
 											
 		int iVal, xVal; //current coordinates
 		int xCount, oCount; //Counts player tiles in a line
@@ -72,11 +72,11 @@ public class Main {
 							if (board[iVal][xVal].equals("-")) {
 								if (iVal != 5) {
 									if (board[iVal + 1][xVal].equals("-") == false) {
-										fitness -= 100000;
+										fitness -= 1000000;
 									}
 									break;
 								}
-								fitness -= 100000;
+								fitness -= 1000000;
 								break;
 							}
 						}
@@ -260,7 +260,7 @@ public class Main {
 	public static void main(String[] args) {
 		currentTurn = 0;
 		String currentPlayer;
-		String[] players = new String[] {"X", "O"};
+		String[] players = new String[] {"O", "X"};
 		String[][] board = new String[6][7];
 		for (int i = 0; i < 6; i++) {
 			for (int x = 0; x < 7; x++) {
