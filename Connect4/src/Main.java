@@ -49,12 +49,10 @@ public class Main {
 							xVal = x + b * combinations[a][1];
 							if (board[iVal][xVal].equals("-")) {
 								if (iVal != 5) {
-									if (board[iVal + 1][xVal].equals("-") == false) {
+									if (board[iVal + 1][xVal].equals("-") == true) {
 										fitness += 10;
 									}
-									break;
 								}
-								fitness += 10;
 								break;
 							}
 						}
